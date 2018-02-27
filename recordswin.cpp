@@ -290,6 +290,7 @@ void RecordsWin::sum_items(RecordItemType item_type, int removed_idx)
 
 void RecordsWin::when_text_menu(Bar& menu)
 {
+	menu.Add(t_("Paste"), callback(&text, &LineEdit::Paste));
 	menu.Add(t_("Phrases"), THISBACK(when_phrases_menu));
 }
 

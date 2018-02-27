@@ -42,7 +42,7 @@ using namespace Upp;
 #define LAYOUTFILE <tara/tarawin.lay>
 #include <CtrlCore/lay.h>
 
-static const String VERSION = "0.4.1";
+static const String VERSION = "0.4.2";
 
 class MainWin : public WithMainWinLayout<TopWindow> {
 public:
