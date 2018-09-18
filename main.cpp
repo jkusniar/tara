@@ -22,29 +22,28 @@
 #define TFILE <tara/tara.t>
 #include <Core/t.h>
 
+// INI file config
+INI_STRING(postgres_hostname, "localhost", "Postgresql hostname");
+INI_STRING(postgres_database, "tara", "Postgresql database");
+INI_STRING(postgres_username, "postgres", "Postgresql username");
+INI_STRING(postgres_password, "*ChangeMe*", "Postgresql password");
+
 GUI_APP_MAIN
 {	
 	int language = LNGC_('S','K','S','K', CHARSET_UTF8);
 	SetLanguage(language);
 	setlocale(LC_ALL,"C");
 
+	SetIniFile(GetDataFile("tara.ini"));
+	//RLOG(GetIniInfoFormatted());
 	
+	//login and open DB session
 	PostgreSQLSession sql_session;
-	
-	//login and open session
-	LoginWin login_dlg;
-	LoadFromFile(login_dlg, "tara_login.cfg");
-	if (!login_dlg.store_login && login_dlg.Run(true) != IDOK)
-		return;
-
-	while(!sql_session.Open("host=localhost dbname="+ AsString(~login_dlg.dbname) +" user="+ AsString(~login_dlg.login) +" password=" + AsString(~login_dlg.password) ))
+	if(!sql_session.Open("host=" + AsString(postgres_hostname) + " dbname="+ AsString(postgres_database) +" user="+ AsString(postgres_username) +" password=" + AsString(postgres_password) ))
 	{
 		Exclamation(Format(t_("Error: %s"), DeQtf(sql_session.GetLastError())));
-		if (login_dlg.Run(true) != IDOK)
-			return;
+		return;
 	}
-	
-	StoreToFile(login_dlg, "tara_login.cfg");
 
 // if DEBUG, synchronize database schema
 #ifdef _DEBUG	
@@ -56,7 +55,7 @@ GUI_APP_MAIN
 	try
 	{
 		// create window
-		MainWin mwin(AsString(~login_dlg.dbname));
+		MainWin mwin(AsString(postgres_database));
 		// load settings from file
 		LoadFromFile(mwin, "tara_main.cfg");
 		// window setup (according to loaded settings)
