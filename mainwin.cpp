@@ -203,8 +203,9 @@ void MainWin::when_about()
 void MainWin::when_toolbar(Bar& bar)
 {
 	Size btnsize; btnsize.cx = 20; btnsize.cy = 20;
-	bar.Add(new_client_btn, btnsize); new_client_btn.Image(CtrlImg::Plus()).Tip(t_("New Client"));
-	new_client_btn <<= clients.StdInsert;
+	//bar.Add(new_client_btn, btnsize); new_client_btn.Image(CtrlImg::Plus()).Tip(t_("New Client"));
+	//new_client_btn <<= clients.StdInsert;
+	bar.Add(CtrlImg::Plus(), clients.StdInsert).Tip(t_("New Client"));
 
 	bar.ToolSeparator();
 	

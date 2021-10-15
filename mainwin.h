@@ -97,7 +97,7 @@ private:
 	void when_options();
 	void when_invoice_mass_print();
 	void when_dummy() {PromptOK("Not implemented yet");}
-	Callback1<Bar&> patients_default_menu;
+	Event<Bar&> patients_default_menu;
 	
 	void fill_controls();
 	void fill_breed_all();
@@ -111,7 +111,7 @@ private:
 	
 	// internal controls (not declared in Layout file)
 	// toolbar
-	ToolButton new_client_btn;
+	//ToolButton new_client_btn;
 	//ToolButton new_patient_btn;
 	EditString find;
 	

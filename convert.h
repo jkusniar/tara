@@ -31,6 +31,7 @@ class SlovakNumberToTextConverter : public NumberToTextConverter
 {
 public: String convert(unsigned long cislo);
 	SlovakNumberToTextConverter();
+	virtual ~SlovakNumberToTextConverter() {}
 
 private:
 	// Number to text conversion...

@@ -50,6 +50,7 @@ SlovakNumberToTextConverter::SlovakNumberToTextConverter()
 	map_rady.Add(9, "kvadri");
 }
 
+
 String SlovakNumberToTextConverter::convertJednotky(unsigned long num, unsigned long multipl)
 {	
 	if (num == 1)
