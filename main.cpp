@@ -24,9 +24,9 @@
 
 // INI file config
 INI_STRING(postgres_hostname, "localhost", "Postgresql hostname");
-INI_STRING(postgres_database, "tara", "Postgresql database");
+INI_STRING(postgres_database, "taradev", "Postgresql database");
 INI_STRING(postgres_username, "postgres", "Postgresql username");
-INI_STRING(postgres_password, "*ChangeMe*", "Postgresql password");
+INI_STRING(postgres_password, "postgres", "Postgresql password");
 
 GUI_APP_MAIN
 {	

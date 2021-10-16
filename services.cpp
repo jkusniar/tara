@@ -150,7 +150,7 @@ InvoiceData& findInvoice(Value recordId) {
 		vmap.Add(ritUnitPrice, ConvertMoney().Format(SQL[PROD_PRICE]));
 		vmap.Add(ritPrice, ConvertMoney().Format(SQL[ITEM_PRICE]));
 
-		inv.record_items.Add(vmap);
+		inv.record_items.Add(pick(vmap));
 	}
 	
 	// summary price
@@ -261,7 +261,7 @@ Vector<InvoiceData>& findInvoices(Date date_from, Date date_to) {
 		vmap.Add(ritUnitPrice, ConvertMoney().Format(SQL[PROD_PRICE]));
 		vmap.Add(ritPrice, ConvertMoney().Format(SQL[ITEM_PRICE]));
 
-		inv_list.Top().record_items.Add(vmap);
+		inv_list.Top().record_items.Add(pick(vmap));
 	}
 	
 	// compute summary price for all invoices
@@ -427,7 +427,7 @@ InvoiceData& findRecord(Value recordId) {
 		vmap.Add(ritUnit, AsString(SQL[COL_UNIT_NAME]));
 		vmap.Add(ritAmount, ConvertAmount().Format(SQL[AMOUNT]));
 
-		inv.record_items.Add(vmap);
+		inv.record_items.Add(pick(vmap));
 	}
 	
 	// summary price

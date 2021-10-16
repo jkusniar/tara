@@ -55,7 +55,7 @@ bool InvoiceList::prepare()
 		vmap.Add(iliInvNum, AsString(SQL[0]));
 		vmap.Add(iliDate, AsString(SQL[1]));
 		vmap.Add(iliTotal, fixFuckedLinuxFormating(ConvertMoney().Format(SQL[2])));
-		inv_list_items.Add(vmap);
+		inv_list_items.Add(pick(vmap));
 	}
 	if (!found) return false;
 	

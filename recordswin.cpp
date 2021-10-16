@@ -38,11 +38,11 @@ RecordsWin::RecordsWin(int lang)
 	// labor items
 	labor_items.AddIndex(ID);
 	labor_items.AddColumn(PROD_ID, t_("Product")).Edit(labor_item_product).SetConvert(labor_item_product).Width(260);
-	labor_items.AddColumn(AMOUNT, t_("Amount")).Edit(labor_item_amount).SetConvert(Single<ConvertAmount>()).Width(60);
-	labor_items.AddColumn(PROD_PRICE, t_("Ut. price")).Edit(labor_item_price).SetConvert(Single<ConvertMoney>()).Width(65);
-	labor_items.AddColumn(UNIT_ID, t_("Ut.")).Edit(labor_item_unit.SetEditable(false)).SetConvert(labor_item_unit).Width(55);
-	labor_items.AddColumn(ITEM_PRICE, t_("Price")).Edit(labor_item_final_price.SetEditable(false)).SetConvert(Single<ConvertMoney>()).Width(45);
-	labor_items.AddColumn(PLU, t_("PLU")).Edit(labor_item_plu.SetEditable(false)).Width(30);
+	labor_items.AddColumn(AMOUNT, t_("Amount")).Edit(labor_item_amount).SetConvert(Single<ConvertAmount>()).Width(65);
+	labor_items.AddColumn(PROD_PRICE, t_("Ut. price")).Edit(labor_item_price).SetConvert(Single<ConvertMoney>()).Width(70);
+	labor_items.AddColumn(UNIT_ID, t_("Ut.")).Edit(labor_item_unit.SetEditable(false)).SetConvert(labor_item_unit).Width(60);
+	labor_items.AddColumn(ITEM_PRICE, t_("Price")).Edit(labor_item_final_price.SetEditable(false)).SetConvert(Single<ConvertMoney>()).Width(50);
+	labor_items.AddColumn(PLU, t_("PLU")).Edit(labor_item_plu.SetEditable(false)).Width(35);
 	
 	labor_items.SetToolBar(false);
 	labor_items.WhenInsertRow = THISBACK(when_labor_item_inserted);
@@ -56,10 +56,10 @@ RecordsWin::RecordsWin(int lang)
 	// material_items
 	material_items.AddIndex(ID);
 	material_items.AddColumn(PROD_ID, t_("Product")).Edit(material_item_product).SetConvert(material_item_product).Width(290);
-	material_items.AddColumn(AMOUNT, t_("Amount")).Edit(material_item_amount).SetConvert(Single<ConvertAmount>()).Width(60);
-	material_items.AddColumn(PROD_PRICE, t_("Ut. price")).Edit(material_item_price).SetConvert(Single<ConvertMoney>()).Width(65);
-	material_items.AddColumn(UNIT_ID, t_("Ut.")).Edit(material_item_unit.SetEditable(false)).SetConvert(material_item_unit).Width(55);
-	material_items.AddColumn(ITEM_PRICE, t_("Price")).Edit(material_item_final_price.SetEditable(false)).SetConvert(Single<ConvertMoney>()).Width(45);
+	material_items.AddColumn(AMOUNT, t_("Amount")).Edit(material_item_amount).SetConvert(Single<ConvertAmount>()).Width(65);
+	material_items.AddColumn(PROD_PRICE, t_("Ut. price")).Edit(material_item_price).SetConvert(Single<ConvertMoney>()).Width(70);
+	material_items.AddColumn(UNIT_ID, t_("Ut.")).Edit(material_item_unit.SetEditable(false)).SetConvert(material_item_unit).Width(60);
+	material_items.AddColumn(ITEM_PRICE, t_("Price")).Edit(material_item_final_price.SetEditable(false)).SetConvert(Single<ConvertMoney>()).Width(50);
 	
 	material_items.SetToolBar(false);
 	material_items.WhenInsertRow = THISBACK(when_material_item_inserted);

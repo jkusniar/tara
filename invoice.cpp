@@ -164,7 +164,7 @@ void InvoiceFormatter::formatCompanyData(StringBuffer &buf) {
 	buf.Cat( vet_dic + "&");
 	if (lang != LANG_CZ)
 		buf.Cat(AsString(t_("ICDPH:")) + "-|-|-|" + vet_icdph + "&");
-	buf.Cat(AsString(t_("Bank account:")) + "-|" + vet_bank_acc +"] ");
+	buf.Cat(AsString(t_("Bank account:")) + "-|-|" + vet_bank_acc +"] ");
 	buf.Cat("}}] ");
 }
 
@@ -336,7 +336,7 @@ void InvoiceFormatter::formatVetData(StringBuffer &buf) {
 	buf.Cat( vet_dic + "&");
 	if (lang != LANG_CZ)
 		buf.Cat(AsString(t_("ICDPH:")) + "-|-|-|" + vet_icdph + "&");
-	buf.Cat(AsString(t_("Bank account:")) + "-|" + vet_bank_acc +"] ");
+	buf.Cat(AsString(t_("Bank account:")) + "-|-|" + vet_bank_acc +"] ");
 	buf.Cat("}}] ");
 }
 
